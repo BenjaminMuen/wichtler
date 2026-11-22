@@ -1,3 +1,5 @@
+from uuid import uuid4
+
 from core.config import load_config, parse_settings, parse_participants
 from core.draw import draw
 
@@ -17,8 +19,11 @@ def main():
     # draw matches
     matches = draw(participants)
 
+    # generate uuid
+    uuid = uuid4()
+
     # generate messages
-    messages = [build_message(p1, p2, title, url, smtp_settings.sender) for p1, p2 in matches.items()]
+    messages = [build_message(p1, p2, title, url, smtp_settings.sender, uuid) for p1, p2 in matches.items()]
 
     # send messages
     send_messages(smtp_settings, messages)    

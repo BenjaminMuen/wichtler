@@ -1,5 +1,3 @@
-from pathlib import Path
-
 from email.message import EmailMessage
 from email.utils import formatdate, make_msgid
 
@@ -14,8 +12,8 @@ from mail import templates
 
 _env = Environment(loader=FileSystemLoader(templates.__path__), autoescape=select_autoescape(enabled_extensions=('html.h2'), default=False), undefined=StrictUndefined)
 
-def build_message(p1: Participant, p2: Participant, title: str, url: Optional[str], sender: str) -> EmailMessage:
-    context = {'giver': p1.name, 'receiver': p2.name, 'title': title, 'url': url or None}
+def build_message(p1: Participant, p2: Participant, title: str, url: Optional[str], sender: str, uuid: str) -> EmailMessage:
+    context = {'giver': p1.name, 'receiver': p2.name, 'title': title, 'uuid': uuid, 'url': url or None}
 
     message = EmailMessage()
 
