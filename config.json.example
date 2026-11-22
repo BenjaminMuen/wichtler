@@ -1,0 +1,20 @@
+{
+    "settings": {
+        "title": "Wichteln 2026",
+        "url": "<shared document>"
+    },
+    "participants": [
+        {
+            "name": "Alice",
+            "email": "alice@mail.com"
+        },
+        {
+            "name": "Bob",
+            "email": "bob@mail.com"
+        },
+        {
+            "name": "Eve",
+            "email": "eve@mail.com"
+        }
+    ]   
+}

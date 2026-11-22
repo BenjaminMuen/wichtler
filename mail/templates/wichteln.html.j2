@@ -1,0 +1,17 @@
+{% extends "base.html.j2" %}
+{% block content %}
+  <p style="color:{{ c.text }};">Hallo {{ giver }},</p>
+  <p style="color:{{ c.text }};">Dein Wichtel ist</p>
+  <p style="font-size:28px;font-weight:bold;text-align:center;color:{{ c.red }};margin:16px 0;">
+    {{ receiver }}
+  </p>
+  {% if url %}
+  <p style="color:{{ c.text }};">Die Wichtelliste findest du hier:</p>
+  <p style="text-align:center;margin:24px 0;">
+    <a href="{{ url }}"
+       style="background-color:{{ c.red }};color:{{ c.white }};text-decoration:none;padding:12px 24px;border-radius:6px;display:inline-block;">
+      Zur Wichtelliste
+    </a>
+  </p>
+  {% endif %}
+{% endblock %}
